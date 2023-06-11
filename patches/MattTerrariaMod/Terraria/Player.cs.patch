@@ -1,0 +1,47 @@
+--- src/Terraria/Terraria/Player.cs
++++ src/MattTerrariaMod/Terraria/Player.cs
+@@ -9195,7 +_,7 @@
+ 			case 8:
+ 			case 18: {
+ 				bool result2 = extraAccessory;
+-				if (!Main.expertMode && !Main.gameMenu)
++				if (/*!Main.expertMode && */!Main.gameMenu)
+ 					result2 = false;
+ 
+ 				return result2;
+@@ -9203,7 +_,7 @@
+ 			case 9:
+ 			case 19: {
+ 				bool result = true;
+-				if (!Main.masterMode && !Main.gameMenu)
++				if (/*!Main.masterMode && */!Main.gameMenu)
+ 					result = false;
+ 
+ 				return result;
+@@ -14187,7 +_,7 @@
+ 
+ 	public void ResetEffects()
+ 	{
+-		if (extraAccessory && (Main.expertMode || Main.gameMenu))
++		if (extraAccessory && (/*Main.expertMode || */Main.gameMenu))
+ 			extraAccessorySlots = 1;
+ 		else
+ 			extraAccessorySlots = 0;
+@@ -35195,7 +_,7 @@
+ 
+ 	private void ItemCheck_UseDemonHeart(Item sItem)
+ 	{
+-		if (sItem.type == 3335 && itemAnimation > 0 && !extraAccessory && Main.expertMode && ItemTimeIsZero) {
++		if (sItem.type == 3335 && itemAnimation > 0 && !extraAccessory/* && Main.expertMode*/ && ItemTimeIsZero) {
+ 			ApplyItemTime(sItem);
+ 			extraAccessory = true;
+ 			NetMessage.SendData(4, -1, -1, null, whoAmI);
+@@ -39910,7 +_,7 @@
+ 		if (gravDir == -1f)
+ 			num3 = (int)(Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY) / 16;
+ 
+-		if (sItem.type == 3335 && (extraAccessory || !Main.expertMode))
++		if (sItem.type == 3335 && (extraAccessory))// || !Main.expertMode))
+ 			flag = false;
+ 
+ 		if (pulley && sItem.fishingPole > 0)
