@@ -1,11 +1,13 @@
 --- src/Refactor/Terraria/Program.cs
 +++ src/MattTerrariaMod/Terraria/Program.cs
-@@ -157,7 +_,7 @@
- 			TrySettingFNAToOpenGL(args);
- 
- 		LaunchParameters = Utils.ParseArguements(args);
--		SavePath = (LaunchParameters.ContainsKey("-savedirectory") ? LaunchParameters["-savedirectory"] : Platform.Get<IPathService>().GetStoragePath("Terraria"));
-+		SavePath = (LaunchParameters.ContainsKey("-savedirectory") ? LaunchParameters["-savedirectory"] : Platform.Get<IPathService>().GetStoragePath("TerrariaMattMod"));
- #if SERVER
- 		Main.dedServ = true;
- #endif
+@@ -29,9 +_,7 @@
+ 	// public const bool IsDebug = false;
+ 	public static Dictionary<string, string> LaunchParameters = new Dictionary<string, string>();
+ 	public static string SavePath;
+-	// TODO: Temporarily change save path for development
+-	//public const string TerrariaSaveFolderPath = "Terraria";
++	public const string TerrariaSaveFolderPath = "TerrariaMattMod";
+-	public const string TerrariaSaveFolderPath = "Terraria_Refactor";
+ 	private static int ThingsToLoad;
+ 	private static int ThingsLoaded;
+ 	public static bool LoadedEverything;
