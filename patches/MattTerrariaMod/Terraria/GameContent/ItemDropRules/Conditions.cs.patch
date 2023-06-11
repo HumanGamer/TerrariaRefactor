@@ -1,0 +1,24 @@
+--- src/Terraria/Terraria/GameContent/ItemDropRules/Conditions.cs
++++ src/MattTerrariaMod/Terraria/GameContent/ItemDropRules/Conditions.cs
+@@ -362,8 +_,8 @@
+ 
+ 	public class IsExpert : IItemDropRuleCondition, IProvideItemConditionDescription
+ 	{
+-		public bool CanDrop(DropAttemptInfo info) => Main.expertMode;
++		public bool CanDrop(DropAttemptInfo info) => true;// Main.expertMode;
+-		public bool CanShowItemDropInUI() => Main.expertMode;
++		public bool CanShowItemDropInUI() => true;// Main.expertMode;
+ 
+ 		public string GetConditionDescription()
+ 		{
+@@ -376,8 +_,8 @@
+ 
+ 	public class IsMasterMode : IItemDropRuleCondition, IProvideItemConditionDescription
+ 	{
+-		public bool CanDrop(DropAttemptInfo info) => Main.masterMode;
++		public bool CanDrop(DropAttemptInfo info) => true;// Main.masterMode;
+-		public bool CanShowItemDropInUI() => Main.masterMode;
++		public bool CanShowItemDropInUI() => true;// Main.masterMode;
+ 		public string GetConditionDescription() => Language.GetTextValue("Bestiary_ItemDropConditions.IsMasterMode");
+ 	}
+ 
