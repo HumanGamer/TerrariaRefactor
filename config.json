@@ -19,8 +19,13 @@
 			"PatchesDir": "Terraria",
 			"SrcDir": "Terraria"
 		},
-    "MattTerrariaMod": {
+    "Refactor": {
       "Parent": "Terraria",
+			"PatchesDir": "Refactor",
+			"SrcDir": "Refactor"
+		},
+    "MattTerrariaMod": {
+      "Parent": "Refactor",
       "PatchesDir": "MattTerrariaMod",
       "SrcDir": "MattTerrariaMod"
     }
