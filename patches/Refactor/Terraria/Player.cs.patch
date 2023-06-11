@@ -1,0 +1,14 @@
+--- src/Terraria/Terraria/Player.cs
++++ src/Refactor/Terraria/Player.cs
+@@ -23741,9 +_,9 @@
+ 					num = 5325;
+ 					break;
+ 				case 5323:
+-					num = 5455;
++					num = ItemID.DontHurtComboBookInactive;
+ 					break;
+-				case 5455:
++				case ItemID.DontHurtComboBookInactive:
+ 					num = 5323;
+ 					break;
+ 				case 4767:

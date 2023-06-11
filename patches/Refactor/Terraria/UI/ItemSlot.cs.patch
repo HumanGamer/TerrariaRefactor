@@ -1,0 +1,13 @@
+--- src/Terraria/Terraria/UI/ItemSlot.cs
++++ src/Refactor/Terraria/UI/ItemSlot.cs
+@@ -1320,8 +_,8 @@
+ 				AfterItemSwap(type, item.type);
+ 				break;
+ 			case 5323:
+-			case 5455:
+-				item.ChangeItemType((item.type == 5323) ? 5455 : 5323);
++			case ItemID.DontHurtComboBookInactive:
++				item.ChangeItemType((item.type == 5323) ? ItemID.DontHurtComboBookInactive : 5323);
+ 				AfterItemSwap(type, item.type);
+ 				break;
+ 			case 4767:

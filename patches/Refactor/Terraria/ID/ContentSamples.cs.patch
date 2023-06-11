@@ -1,0 +1,11 @@
+--- src/Terraria/Terraria/ID/ContentSamples.cs
++++ src/Refactor/Terraria/ID/ContentSamples.cs
+@@ -787,7 +_,7 @@
+ 		AddItemResearchOverride(4346, 5391);
+ 		AddItemResearchOverride(4767, 5453);
+ 		AddItemResearchOverride(5309, 5454);
+-		AddItemResearchOverride(5323, 5455);
++		AddItemResearchOverride(5323, ItemID.DontHurtComboBookInactive);
+ 	}
+ 
+ 	private static void AddItemResearchOverride(int itemTypeToUnlock, params int[] itemsThatWillResearchTheItemToUnlock)

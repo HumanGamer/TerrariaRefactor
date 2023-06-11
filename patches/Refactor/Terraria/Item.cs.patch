@@ -176,6 +176,15 @@
  				this.type = type;
  				useTime = 15;
  				pick = 59;
+@@ -46268,7 +_,7 @@
+ 				width = 30;
+ 				height = 30;
+ 				break;
+-			case 5455:
++			case ItemID.DontHurtComboBookInactive:
+ 				SetShopValues(ItemRarityColor.Green2, buyPrice(0, 10));
+ 				width = 30;
+ 				height = 30;
 @@ -47110,27 +_,54 @@
  			variant = null;
  
