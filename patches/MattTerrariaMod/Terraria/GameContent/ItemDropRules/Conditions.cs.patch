@@ -1,5 +1,49 @@
 --- src/Terraria/Terraria/GameContent/ItemDropRules/Conditions.cs
 +++ src/MattTerrariaMod/Terraria/GameContent/ItemDropRules/Conditions.cs
+@@ -251,15 +_,15 @@
+ 
+ 	public class NotExpert : IItemDropRuleCondition, IProvideItemConditionDescription
+ 	{
+-		public bool CanDrop(DropAttemptInfo info) => !Main.expertMode;
++		public bool CanDrop(DropAttemptInfo info) => false;//!Main.expertMode;
+-		public bool CanShowItemDropInUI() => !Main.expertMode;
++		public bool CanShowItemDropInUI() => false;//!Main.expertMode;
+ 		public string GetConditionDescription() => Language.GetTextValue("Bestiary_ItemDropConditions.NotExpert");
+ 	}
+ 
+ 	public class NotMasterMode : IItemDropRuleCondition, IProvideItemConditionDescription
+ 	{
+-		public bool CanDrop(DropAttemptInfo info) => !Main.masterMode;
++		public bool CanDrop(DropAttemptInfo info) => false;//!Main.masterMode;
+-		public bool CanShowItemDropInUI() => !Main.masterMode;
++		public bool CanShowItemDropInUI() => false;//!Main.masterMode;
+ 		public string GetConditionDescription() => Language.GetTextValue("Bestiary_ItemDropConditions.NotMasterMode");
+ 	}
+ 
+@@ -330,12 +_,12 @@
+ 		public bool CanDrop(DropAttemptInfo info)
+ 		{
+ 			if (info.npc.boss)
+-				return Main.expertMode;
++				return true;// Main.expertMode;
+ 
+ 			return false;
+ 		}
+ 
+-		public bool CanShowItemDropInUI() => Main.expertMode;
++		public bool CanShowItemDropInUI() => true;// Main.expertMode;
+ 		public string GetConditionDescription() => Language.GetTextValue("Bestiary_ItemDropConditions.LegacyHack_IsBossAndExpert");
+ 	}
+ 
+@@ -344,7 +_,7 @@
+ 		public bool CanDrop(DropAttemptInfo info)
+ 		{
+ 			if (info.npc.boss)
+-				return !Main.expertMode;
++				return false;// !Main.expertMode;
+ 
+ 			return false;
+ 		}
 @@ -362,8 +_,8 @@
  
  	public class IsExpert : IItemDropRuleCondition, IProvideItemConditionDescription
