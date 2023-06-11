@@ -1,0 +1,60 @@
+--- src/Terraria/Terraria/WorldGen.cs
++++ src/MattTerrariaMod/Terraria/WorldGen.cs
+@@ -893,6 +_,7 @@
+ 	public static bool everythingWorldGen = false;
+ 	public static bool noTrapsWorldGen = false;
+ 	public static bool drunkWorldGen = false;
++	public static bool bothEvils = false;
+ 	public static bool getGoodWorldGen = false;
+ 	public static bool tempTenthAnniversaryWorldGen = false;
+ 	public static bool tenthAnniversaryWorldGen = false;
+@@ -6197,6 +_,13 @@
+ 			if (WorldGenParam_Evil == 1)
+ 				crimson = true;
+ 
++			if (WorldGenParam_Evil == 2)
++			{
++				crimson = false;
++
++				bothEvils = true;
++			}
++
+ 			if (GenVars.jungleHut == 0)
+ 				GenVars.jungleHut = 119;
+ 			else if (GenVars.jungleHut == 1)
+@@ -8007,7 +_,7 @@
+ 				num786 *= 2;
+ 			}
+ 
+-			if (drunkWorldGen) {
++			if (drunkWorldGen || bothEvils) {
+ 				flag49 = true;
+ 				num787 /= 2.0;
+ 			}
+@@ -8029,7 +_,7 @@
+ 						flag50 = true;
+ 						int num796 = Main.maxTilesX / 2;
+ 						int num797 = 200;
+-						if (drunkWorldGen) {
++						if (drunkWorldGen || bothEvils) {
+ 							num797 = 100;
+ 							num793 = ((!GenVars.crimsonLeft) ? genRand.Next((int)((double)Main.maxTilesX * 0.5), Main.maxTilesX - num785) : genRand.Next(num785, (int)((double)Main.maxTilesX * 0.5)));
+ 						}
+@@ -8210,7 +_,7 @@
+ 				CrimPlaceHearts();
+ 			}
+ 
+-			if (drunkWorldGen)
++			if (drunkWorldGen || bothEvils)
+ 				flag49 = false;
+ 
+ 			if (!flag49) {
+@@ -8230,7 +_,7 @@
+ 						flag53 = true;
+ 						int num819 = Main.maxTilesX / 2;
+ 						int num820 = 200;
+-						num816 = ((!drunkWorldGen) ? genRand.Next(num785, Main.maxTilesX - num785) : (GenVars.crimsonLeft ? genRand.Next((int)((double)Main.maxTilesX * 0.5), Main.maxTilesX - num785) : genRand.Next(num785, (int)((double)Main.maxTilesX * 0.5))));
++						num816 = ((!drunkWorldGen && !bothEvils) ? genRand.Next(num785, Main.maxTilesX - num785) : (GenVars.crimsonLeft ? genRand.Next((int)((double)Main.maxTilesX * 0.5), Main.maxTilesX - num785) : genRand.Next(num785, (int)((double)Main.maxTilesX * 0.5))));
+ 						num817 = num816 - genRand.Next(200) - 100;
+ 						num818 = num816 + genRand.Next(200) + 100;
+ 						if (num817 < GenVars.evilBiomeBeachAvoidance)

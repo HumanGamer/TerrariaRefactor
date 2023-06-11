@@ -1,0 +1,82 @@
+--- src/Terraria/Terraria/GameContent/UI/States/UIWorldCreation.cs
++++ src/MattTerrariaMod/Terraria/GameContent/UI/States/UIWorldCreation.cs
+@@ -35,7 +_,8 @@
+ 	{
+ 		Random,
+ 		Corruption,
+-		Crimson
++		Crimson,
++		Both
+ 	}
+ 
+ 	private WorldSizeId _optionSize;
+@@ -373,34 +_,39 @@
+ 
+ 	private void AddWorldEvilOptions(UIElement container, float accumualtedHeight, MouseEvent clickEvent, string tagGroup, float usableWidthPercent)
+ 	{
+-		WorldEvilId[] array = new WorldEvilId[3] {
++		WorldEvilId[] array = new WorldEvilId[4] {
+ 			WorldEvilId.Random,
+ 			WorldEvilId.Corruption,
+-			WorldEvilId.Crimson
++			WorldEvilId.Crimson,
++			WorldEvilId.Both
+ 		};
+ 
+-		LocalizedText[] array2 = new LocalizedText[3] {
++		LocalizedText[] array2 = new LocalizedText[4] {
+ 			Lang.misc[103],
+ 			Lang.misc[101],
+-			Lang.misc[102]
++			Lang.misc[102],
++			Lang.misc[102] // TODO: Both
+ 		};
+ 
+-		LocalizedText[] array3 = new LocalizedText[3] {
++		LocalizedText[] array3 = new LocalizedText[4] {
+ 			Language.GetText("UI.WorldDescriptionEvilRandom"),
+ 			Language.GetText("UI.WorldDescriptionEvilCorrupt"),
+-			Language.GetText("UI.WorldDescriptionEvilCrimson")
++			Language.GetText("UI.WorldDescriptionEvilCrimson"),
++			Language.GetText("UI.WorldDescriptionEvilBoth")
+ 		};
+ 
+-		Color[] array4 = new Color[3] {
++		Color[] array4 = new Color[4] {
+ 			Color.White,
+ 			Color.MediumPurple,
+-			Color.IndianRed
++			Color.IndianRed,
++			Color.CornflowerBlue
+ 		};
+ 
+-		string[] array5 = new string[3] {
++		string[] array5 = new string[4] {
+ 			"Images/UI/WorldCreation/IconEvilRandom",
+ 			"Images/UI/WorldCreation/IconEvilCorruption",
+-			"Images/UI/WorldCreation/IconEvilCrimson"
++			"Images/UI/WorldCreation/IconEvilCrimson",
++			"Images/UI/WorldCreation/IconEvilRandom" // TODO: Both
+ 		};
+ 
+ 		GroupOptionButton<WorldEvilId>[] array6 = new GroupOptionButton<WorldEvilId>[array.Length];
+@@ -690,6 +_,9 @@
+ 			case WorldEvilId.Crimson:
+ 				WorldGen.WorldGenParam_Evil = 1;
+ 				break;
++			case WorldEvilId.Both:
++				WorldGen.WorldGenParam_Evil = 2;
++				break;
+ 		}
+ 
+ 		Main.ActiveWorldFileData = WorldFile.CreateMetadata(Main.worldName = _optionwWorldName.Trim(), SocialAPI.Cloud != null && SocialAPI.Cloud.EnabledByDefault, Main.GameMode);
+@@ -787,6 +_,9 @@
+ 					break;
+ 				case 2:
+ 					_optionEvil = WorldEvilId.Crimson;
++					break;
++				case 3:
++					_optionEvil = WorldEvilId.Both;
+ 					break;
+ 			}
+ 		}
