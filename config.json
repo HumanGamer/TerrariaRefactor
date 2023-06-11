@@ -18,6 +18,11 @@
 		"Terraria": {
 			"PatchesDir": "Terraria",
 			"SrcDir": "Terraria"
-		}
+		},
+    "MattTerrariaMod": {
+      "Parent": "Terraria",
+      "PatchesDir": "MattTerrariaMod",
+      "SrcDir": "MattTerrariaMod"
+    }
 	}
 }
