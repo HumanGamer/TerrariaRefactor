@@ -1,0 +1,23 @@
+--- src/Terraria/Terraria/Social/SocialAPI.cs
++++ src/MattTerrariaMod/Terraria/Social/SocialAPI.cs
+@@ -26,13 +_,13 @@
+ 	{
+ 		if (!mode.HasValue) {
+ 			mode = SocialMode.None;
+-			if (Main.dedServ) {
+-				if (Program.LaunchParameters.ContainsKey("-steam"))
+-					mode = SocialMode.Steam;
+-			}
+-			else {
+-				mode = SocialMode.Steam;
+-			}
++			//if (Main.dedServ) {
++			//	if (Program.LaunchParameters.ContainsKey("-steam"))
++			//		mode = SocialMode.Steam;
++			//}
++			//else {
++			//	mode = SocialMode.Steam;
++			//}
+ 		}
+ 
+ 		_mode = mode.Value;
