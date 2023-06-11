@@ -1,6 +1,6 @@
 --- src/Terraria/Terraria/Item.cs
 +++ src/Refactor/Terraria/Item.cs
-@@ -2375,21 +_,6 @@
+@@ -2375,22 +_,7 @@
  	public void SetDefaults1(int type)
  	{
  		switch (type) {
@@ -19,9 +19,485 @@
 -				value = 2000;
 -				melee = true;
 -				break;
- 			case 2:
+-			case 2:
++			case ItemID.DirtBlock:
  				useStyle = 1;
  				useTurn = true;
+ 				useAnimation = 15;
+@@ -2402,7 +_,7 @@
+ 				width = 12;
+ 				height = 12;
+ 				break;
+-			case 3:
++			case ItemID.StoneBlock:
+ 				useStyle = 1;
+ 				useTurn = true;
+ 				useAnimation = 15;
+@@ -2414,7 +_,7 @@
+ 				width = 12;
+ 				height = 12;
+ 				break;
+-			case 4:
++			case ItemID.IronBroadsword:
+ 				useStyle = 1;
+ 				useTurn = false;
+ 				useAnimation = 20;
+@@ -2428,7 +_,7 @@
+ 				value = 1800;
+ 				melee = true;
+ 				break;
+-			case 5:
++			case ItemID.Mushroom:
+ 				useStyle = 2;
+ 				UseSound = SoundID.Item2;
+ 				useTurn = false;
+@@ -2442,7 +_,7 @@
+ 				potion = true;
+ 				value = sellPrice(0, 0, 2, 50);
+ 				break;
+-			case 6:
++			case ItemID.IronShortsword:
+ 				autoReuse = false;
+ 				useStyle = 13;
+ 				useAnimation = 12;
+@@ -2459,7 +_,7 @@
+ 				melee = true;
+ 				noUseGraphic = true;
+ 				break;
+-			case 7:
++			case ItemID.IronHammer:
+ 				autoReuse = true;
+ 				useStyle = 1;
+ 				useTurn = true;
+@@ -2503,7 +_,7 @@
+ 				width = 8;
+ 				height = 10;
+ 				break;
+-			case 10:
++			case ItemID.IronAxe:
+ 				useStyle = 1;
+ 				useTurn = true;
+ 				useAnimation = 27;
+@@ -3579,7 +_,7 @@
+ 				rare = 2;
+ 				ranged = true;
+ 				break;
+-			case 99:
++			case ItemID.IronBow:
+ 				useStyle = 5;
+ 				useAnimation = 28;
+ 				useTime = 28;
+@@ -28914,7 +_,7 @@
+ 							mountType = 9;
+ 							value = sellPrice(0, 5);
+ 							return;
+-						case 2772:
++						case ItemID.VortexAxe:
+ 							autoReuse = true;
+ 							useStyle = 1;
+ 							useAnimation = 25;
+@@ -28932,7 +_,7 @@
+ 							glowMask = 1;
+ 							tileBoost += 4;
+ 							return;
+-						case 2773:
++						case ItemID.VortexChainsaw:
+ 							useStyle = 5;
+ 							useAnimation = 25;
+ 							useTime = 7;
+@@ -28953,7 +_,7 @@
+ 							glowMask = 20;
+ 							tileBoost += 4;
+ 							return;
+-						case 2774:
++						case ItemID.VortexDrill:
+ 							useStyle = 5;
+ 							useAnimation = 25;
+ 							useTime = 4;
+@@ -28974,7 +_,7 @@
+ 							glowMask = 21;
+ 							tileBoost += 3;
+ 							return;
+-						case 2776:
++						case ItemID.VortexPickaxe:
+ 							useStyle = 1;
+ 							useAnimation = 12;
+ 							useTime = 6;
+@@ -28992,7 +_,7 @@
+ 							glowMask = 5;
+ 							tileBoost += 4;
+ 							return;
+-						case 2775:
++						case ItemID.VortexHammer:
+ 							useTurn = true;
+ 							autoReuse = true;
+ 							useStyle = 1;
+@@ -29012,56 +_,230 @@
+ 							tileBoost += 4;
+ 							return;
+ 						case 2777:
+-							SetDefaults3(2772);
++							autoReuse = true;
++							useStyle = 1;
++							useAnimation = 25;
++							knockBack = 6f;
++							useTime = 7;
++							width = 54;
++							height = 54;
++							damage = 100;
++							axe = 27;
++							UseSound = SoundID.Item1;
++							rare = 10;
++							scale = 1.05f;
++							value = sellPrice(0, 6);
++							melee = true;
++							glowMask = 1;
++							tileBoost += 4;
++
+ 							type = 2777;
+ 							glowMask = 6;
+ 							return;
+ 						case 2778:
+-							SetDefaults3(2773);
++							useStyle = 5;
++							useAnimation = 25;
++							useTime = 7;
++							shootSpeed = 28f;
++							knockBack = 4f;
++							width = 56;
++							height = 22;
++							damage = 80;
++							axe = 27;
++							UseSound = SoundID.Item23;
++							shoot = 427;
++							rare = 10;
++							value = sellPrice(0, 6);
++							noMelee = true;
++							noUseGraphic = true;
++							melee = true;
++							channel = true;
++							glowMask = 20;
++							tileBoost += 4;
++
+ 							type = 2778;
+ 							shoot = 429;
+ 							glowMask = 22;
+ 							return;
+ 						case 2779:
+-							SetDefaults3(2774);
++							useStyle = 5;
++							useAnimation = 25;
++							useTime = 4;
++							shootSpeed = 32f;
++							knockBack = 0.5f;
++							width = 54;
++							height = 26;
++							damage = 50;
++							pick = 225;
++							UseSound = SoundID.Item23;
++							shoot = 428;
++							rare = 10;
++							value = sellPrice(0, 7);
++							noMelee = true;
++							noUseGraphic = true;
++							melee = true;
++							channel = true;
++							glowMask = 21;
++							tileBoost += 3;
++
+ 							type = 2779;
+ 							shoot = 430;
+ 							glowMask = 23;
+ 							return;
+ 						case 2780:
+-							SetDefaults3(2775);
++							useTurn = true;
++							autoReuse = true;
++							useStyle = 1;
++							useAnimation = 30;
++							useTime = 7;
++							knockBack = 7f;
++							width = 44;
++							height = 42;
++							damage = 110;
++							hammer = 100;
++							UseSound = SoundID.Item1;
++							rare = 10;
++							value = sellPrice(0, 8);
++							melee = true;
++							scale = 1.1f;
++							glowMask = 4;
++							tileBoost += 4;
++
+ 							type = 2780;
+ 							glowMask = 9;
+ 							return;
+ 						case 2781:
+-							SetDefaults3(2776);
++							useStyle = 1;
++							useAnimation = 12;
++							useTime = 6;
++							knockBack = 5.5f;
++							useTurn = true;
++							autoReuse = true;
++							width = 36;
++							height = 36;
++							damage = 80;
++							pick = 225;
++							UseSound = SoundID.Item1;
++							rare = 10;
++							value = sellPrice(0, 7);
++							melee = true;
++							glowMask = 5;
++							tileBoost += 4;
++
+ 							type = 2781;
+ 							glowMask = 10;
+ 							return;
+ 						case 2782:
+-							SetDefaults3(2772);
++							autoReuse = true;
++							useStyle = 1;
++							useAnimation = 25;
++							knockBack = 6f;
++							useTime = 7;
++							width = 54;
++							height = 54;
++							damage = 100;
++							axe = 27;
++							UseSound = SoundID.Item1;
++							rare = 10;
++							scale = 1.05f;
++							value = sellPrice(0, 6);
++							melee = true;
++							glowMask = 1;
++							tileBoost += 4;
++
+ 							type = 2782;
+ 							glowMask = -1;
+ 							return;
+ 						case 2783:
+-							SetDefaults3(2773);
++							useStyle = 5;
++							useAnimation = 25;
++							useTime = 7;
++							shootSpeed = 28f;
++							knockBack = 4f;
++							width = 56;
++							height = 22;
++							damage = 80;
++							axe = 27;
++							UseSound = SoundID.Item23;
++							shoot = 427;
++							rare = 10;
++							value = sellPrice(0, 6);
++							noMelee = true;
++							noUseGraphic = true;
++							melee = true;
++							channel = true;
++							glowMask = 20;
++							tileBoost += 4;
++
+ 							type = 2783;
+ 							shoot = 431;
+ 							glowMask = -1;
+ 							return;
+ 						case 2784:
+-							SetDefaults3(2774);
++							useStyle = 5;
++							useAnimation = 25;
++							useTime = 4;
++							shootSpeed = 32f;
++							knockBack = 0.5f;
++							width = 54;
++							height = 26;
++							damage = 50;
++							pick = 225;
++							UseSound = SoundID.Item23;
++							shoot = 428;
++							rare = 10;
++							value = sellPrice(0, 7);
++							noMelee = true;
++							noUseGraphic = true;
++							melee = true;
++							channel = true;
++							glowMask = 21;
++							tileBoost += 3;
++
+ 							type = 2784;
+ 							shoot = 432;
+ 							glowMask = -1;
+ 							return;
+ 						case 2785:
+-							SetDefaults3(2775);
++							useTurn = true;
++							autoReuse = true;
++							useStyle = 1;
++							useAnimation = 30;
++							useTime = 7;
++							knockBack = 7f;
++							width = 44;
++							height = 42;
++							damage = 110;
++							hammer = 100;
++							UseSound = SoundID.Item1;
++							rare = 10;
++							value = sellPrice(0, 8);
++							melee = true;
++							scale = 1.1f;
++							glowMask = 4;
++							tileBoost += 4;
++
+ 							type = 2785;
+ 							glowMask = -1;
+ 							return;
+ 						case 2786:
+-							SetDefaults3(2776);
++							useStyle = 1;
++							useAnimation = 12;
++							useTime = 6;
++							knockBack = 5.5f;
++							useTurn = true;
++							autoReuse = true;
++							width = 36;
++							height = 36;
++							damage = 80;
++							pick = 225;
++							UseSound = SoundID.Item1;
++							rare = 10;
++							value = sellPrice(0, 7);
++							melee = true;
++							glowMask = 5;
++							tileBoost += 4;
++
+ 							type = 2786;
+ 							glowMask = -1;
+ 							return;
+@@ -33729,30 +_,117 @@
+ 				width = 12;
+ 				height = 12;
+ 				return;
+-			case 3462:
+-				SetDefaults3(2772);
+-				type = 3462;
++			case ItemID.StardustAxe:
++				autoReuse = true;
++				useStyle = 1;
++				useAnimation = 25;
++				knockBack = 6f;
++				useTime = 7;
++				width = 54;
++				height = 54;
++				damage = 100;
++				axe = 27;
++				UseSound = SoundID.Item1;
++				rare = 10;
++				scale = 1.05f;
++				value = sellPrice(0, 6);
++				melee = true;
++				glowMask = 1;
++				tileBoost += 4;
++
++				type = ItemID.StardustAxe;
+ 				glowMask = 174;
+ 				return;
+ 			case 3463:
+-				SetDefaults3(2773);
++				useStyle = 5;
++				useAnimation = 25;
++				useTime = 7;
++				shootSpeed = 28f;
++				knockBack = 4f;
++				width = 56;
++				height = 22;
++				damage = 80;
++				axe = 27;
++				UseSound = SoundID.Item23;
++				shoot = 427;
++				rare = 10;
++				value = sellPrice(0, 6);
++				noMelee = true;
++				noUseGraphic = true;
++				melee = true;
++				channel = true;
++				glowMask = 20;
++				tileBoost += 4;
++
+ 				type = 3463;
+ 				shoot = 610;
+ 				glowMask = 175;
+ 				return;
+ 			case 3464:
+-				SetDefaults3(2774);
++				useStyle = 5;
++				useAnimation = 25;
++				useTime = 4;
++				shootSpeed = 32f;
++				knockBack = 0.5f;
++				width = 54;
++				height = 26;
++				damage = 50;
++				pick = 225;
++				UseSound = SoundID.Item23;
++				shoot = 428;
++				rare = 10;
++				value = sellPrice(0, 7);
++				noMelee = true;
++				noUseGraphic = true;
++				melee = true;
++				channel = true;
++				glowMask = 21;
++				tileBoost += 3;
++
+ 				type = 3464;
+ 				shoot = 609;
+ 				glowMask = 176;
+ 				return;
+ 			case 3465:
+-				SetDefaults3(2775);
++				useTurn = true;
++				autoReuse = true;
++				useStyle = 1;
++				useAnimation = 30;
++				useTime = 7;
++				knockBack = 7f;
++				width = 44;
++				height = 42;
++				damage = 110;
++				hammer = 100;
++				UseSound = SoundID.Item1;
++				rare = 10;
++				value = sellPrice(0, 8);
++				melee = true;
++				scale = 1.1f;
++				glowMask = 4;
++				tileBoost += 4;
++
+ 				type = 3465;
+ 				glowMask = 177;
+ 				return;
+ 			case 3466:
+-				SetDefaults3(2776);
++				useStyle = 1;
++				useAnimation = 12;
++				useTime = 6;
++				knockBack = 5.5f;
++				useTurn = true;
++				autoReuse = true;
++				width = 36;
++				height = 36;
++				damage = 80;
++				pick = 225;
++				UseSound = SoundID.Item1;
++				rare = 10;
++				value = sellPrice(0, 7);
++				melee = true;
++				glowMask = 5;
++				tileBoost += 4;
++
+ 				type = 3466;
+ 				glowMask = 178;
+ 				return;
 @@ -33947,7 +_,20 @@
  
  		switch (type) {
@@ -44,6 +520,119 @@
  				this.type = type;
  				useTime = 17;
  				pick = 55;
+@@ -33957,7 +_,19 @@
+ 				value = 10000;
+ 				return;
+ 			case 3520:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 18;
+ 				damage = 15;
+@@ -33966,7 +_,22 @@
+ 				value = 9000;
+ 				return;
+ 			case 3519:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 12;
+ 				useAnimation = 11;
+@@ -33977,7 +_,21 @@
+ 				value = 7000;
+ 				return;
+ 			case 3517:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 28;
+ 				useTime = 23;
+@@ -33987,7 +_,21 @@
+ 				value = 8000;
+ 				return;
+ 			case 3518:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 18;
+ 				axe = 11;
+@@ -33997,7 +_,20 @@
+ 				value = 8000;
+ 				return;
+ 			case 3516:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 26;
+ 				useTime = 26;
 @@ -34005,7 +_,20 @@
  				value = 7000;
  				return;
@@ -66,6 +655,119 @@
  				this.type = type;
  				useTime = 11;
  				pick = 45;
+@@ -34015,7 +_,19 @@
+ 				value = 5000;
+ 				return;
+ 			case 3514:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 20;
+ 				damage = 14;
+@@ -34024,7 +_,22 @@
+ 				scale = 1f;
+ 				return;
+ 			case 3513:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 9;
+ 				useAnimation = 12;
+@@ -34035,7 +_,21 @@
+ 				value = 3500;
+ 				return;
+ 			case 3511:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 29;
+ 				useTime = 19;
+@@ -34045,7 +_,21 @@
+ 				value = 4000;
+ 				return;
+ 			case 3512:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 18;
+ 				axe = 10;
+@@ -34055,7 +_,20 @@
+ 				value = 4000;
+ 				return;
+ 			case 3510:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 27;
+ 				useTime = 27;
 @@ -34063,7 +_,20 @@
  				value = 3500;
  				return;
@@ -88,6 +790,119 @@
  				this.type = type;
  				useTime = 15;
  				pick = 35;
+@@ -34074,7 +_,19 @@
+ 				value = 500;
+ 				return;
+ 			case 3508:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 21;
+ 				damage = 9;
+@@ -34082,7 +_,22 @@
+ 				scale = 1f;
+ 				return;
+ 			case 3507:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 5;
+ 				useAnimation = 13;
+@@ -34093,7 +_,21 @@
+ 				value = 350;
+ 				return;
+ 			case 3505:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 33;
+ 				useTime = 23;
+@@ -34104,7 +_,21 @@
+ 				value = 400;
+ 				return;
+ 			case 3506:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 21;
+ 				axe = 7;
+@@ -34115,7 +_,20 @@
+ 				value = 400;
+ 				return;
+ 			case 3504:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 29;
+ 				useTime = 29;
 @@ -34123,7 +_,20 @@
  				value = 350;
  				return;
@@ -110,6 +925,119 @@
  				this.type = type;
  				useTime = 14;
  				pick = 35;
+@@ -34133,7 +_,19 @@
+ 				value = 750;
+ 				return;
+ 			case 3502:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 20;
+ 				damage = 10;
+@@ -34141,7 +_,22 @@
+ 				scale = 1f;
+ 				return;
+ 			case 3501:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 7;
+ 				useAnimation = 12;
+@@ -34152,7 +_,21 @@
+ 				value = 525;
+ 				return;
+ 			case 3499:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 31;
+ 				useTime = 21;
+@@ -34162,7 +_,21 @@
+ 				value = 600;
+ 				return;
+ 			case 3500:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 20;
+ 				axe = 8;
+@@ -34172,7 +_,20 @@
+ 				value = 600;
+ 				return;
+ 			case 3498:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 28;
+ 				useTime = 28;
 @@ -34180,7 +_,20 @@
  				value = 525;
  				return;
@@ -132,6 +1060,119 @@
  				this.type = type;
  				useTime = 12;
  				pick = 43;
+@@ -34190,7 +_,19 @@
+ 				value = 3000;
+ 				return;
+ 			case 3496:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 20;
+ 				damage = 13;
+@@ -34199,7 +_,22 @@
+ 				knockBack = 5.5f;
+ 				return;
+ 			case 3495:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 9;
+ 				useAnimation = 12;
+@@ -34210,7 +_,21 @@
+ 				value = 2100;
+ 				return;
+ 			case 3493:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 29;
+ 				useTime = 19;
+@@ -34220,7 +_,21 @@
+ 				value = 2400;
+ 				return;
+ 			case 3494:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 19;
+ 				axe = 10;
+@@ -34230,7 +_,20 @@
+ 				value = 2400;
+ 				return;
+ 			case 3492:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 27;
+ 				useTime = 27;
 @@ -34238,7 +_,20 @@
  				value = 2100;
  				return;
@@ -154,6 +1195,119 @@
  				this.type = type;
  				useTime = 19;
  				pick = 50;
+@@ -34248,7 +_,19 @@
+ 				value = 7500;
+ 				return;
+ 			case 3490:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 19;
+ 				damage = 14;
+@@ -34257,7 +_,22 @@
+ 				value = 6750;
+ 				return;
+ 			case 3489:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 10;
+ 				useAnimation = 11;
+@@ -34268,7 +_,21 @@
+ 				value = 5250;
+ 				return;
+ 			case 3487:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 28;
+ 				useTime = 25;
+@@ -34278,7 +_,21 @@
+ 				value = 6000;
+ 				return;
+ 			case 3488:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 18;
+ 				axe = 11;
+@@ -34288,7 +_,20 @@
+ 				value = 6000;
+ 				return;
+ 			case 3486:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 26;
+ 				useTime = 26;
 @@ -34296,7 +_,20 @@
  				value = 5250;
  				return;
@@ -176,6 +1330,182 @@
  				this.type = type;
  				useTime = 15;
  				pick = 59;
+@@ -34306,7 +_,19 @@
+ 				value = 15000;
+ 				return;
+ 			case 3484:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 17;
+ 				damage = 16;
+@@ -34315,7 +_,22 @@
+ 				value = 13500;
+ 				return;
+ 			case 3483:
+-				SetDefaults1(6);
++				autoReuse = false;
++				useStyle = 13;
++				useAnimation = 12;
++				useTime = 12;
++				width = 50;
++				height = 18;
++				shoot = 940;
++				UseSound = SoundID.Item1;
++				damage = 8;
++				knockBack = 4f;
++				shootSpeed = 2.1f;
++				noMelee = true;
++				SetShopValues(ItemRarityColor.White0, sellPrice(0, 0, 2, 80));
++				melee = true;
++				noUseGraphic = true;
++
+ 				this.type = type;
+ 				damage = 13;
+ 				useAnimation = 10;
+@@ -34326,7 +_,21 @@
+ 				value = 10500;
+ 				return;
+ 			case 3481:
+-				SetDefaults1(7);
++				autoReuse = true;
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 30;
++				useTime = 20;
++				hammer = 40;
++				width = 24;
++				height = 28;
++				damage = 7;
++				knockBack = 5.5f;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 27;
+ 				useTime = 21;
+@@ -34336,7 +_,21 @@
+ 				value = 12000;
+ 				return;
+ 			case 3482:
+-				SetDefaults1(10);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 27;
++				knockBack = 4.5f;
++				useTime = 19;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				axe = 9;
++				scale = 1f;
++				UseSound = SoundID.Item1;
++				value = 1600;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 17;
+ 				axe = 12;
+@@ -34346,7 +_,20 @@
+ 				value = 12000;
+ 				return;
+ 			case 3480:
+-				SetDefaults1(99);
++				useStyle = 5;
++				useAnimation = 28;
++				useTime = 28;
++				width = 12;
++				height = 28;
++				shoot = 1;
++				useAmmo = AmmoID.Arrow;
++				UseSound = SoundID.Item5;
++				damage = 8;
++				shootSpeed = 6.6f;
++				noMelee = true;
++				value = 1400;
++				ranged = true;
++
+ 				this.type = type;
+ 				useAnimation = 25;
+ 				useTime = 25;
+@@ -34659,7 +_,19 @@
+ 				crit = 7;
+ 				return;
+ 			case 3352:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 12;
+ 				useTime = 12;
+@@ -34670,7 +_,19 @@
+ 				value = sellPrice(0, 0, 50);
+ 				return;
+ 			case 3351:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 15;
+ 				useTime = 15;
+@@ -34681,7 +_,19 @@
+ 				value = sellPrice(0, 0, 50);
+ 				return;
+ 			case 3349:
+-				SetDefaults1(4);
++				useStyle = 1;
++				useTurn = false;
++				useAnimation = 20;
++				useTime = 20;
++				width = 24;
++				height = 28;
++				damage = 12;
++				knockBack = 5.5f;
++				UseSound = SoundID.Item1;
++				scale = 1f;
++				value = 1800;
++				melee = true;
++
+ 				this.type = type;
+ 				useAnimation = 18;
+ 				useTime = 18;
 @@ -46268,7 +_,7 @@
  				width = 30;
  				height = 30;
