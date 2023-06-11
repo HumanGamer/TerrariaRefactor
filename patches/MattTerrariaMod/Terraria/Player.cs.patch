@@ -1,23 +1,26 @@
 --- src/Terraria/Terraria/Player.cs
 +++ src/MattTerrariaMod/Terraria/Player.cs
-@@ -9195,7 +_,7 @@
+@@ -9195,16 +_,16 @@
  			case 8:
  			case 18: {
  				bool result2 = extraAccessory;
 -				if (!Main.expertMode && !Main.gameMenu)
-+				if (/*!Main.expertMode && */!Main.gameMenu)
- 					result2 = false;
+-					result2 = false;
++				//if (!Main.expertMode && !Main.gameMenu)
++				//	result2 = false;
  
  				return result2;
-@@ -9203,7 +_,7 @@
+ 			}
  			case 9:
  			case 19: {
  				bool result = true;
 -				if (!Main.masterMode && !Main.gameMenu)
-+				if (/*!Main.masterMode && */!Main.gameMenu)
- 					result = false;
+-					result = false;
++				//if (!Main.masterMode && !Main.gameMenu)
++				//	result = false;
  
  				return result;
+ 			}
 @@ -14187,7 +_,7 @@
  
  	public void ResetEffects()
