@@ -1,0 +1,11 @@
+--- src/Terraria/Terraria/Program.cs
++++ src/MattTerrariaMod/Terraria/Program.cs
+@@ -157,7 +_,7 @@
+ 			TrySettingFNAToOpenGL(args);
+ 
+ 		LaunchParameters = Utils.ParseArguements(args);
+-		SavePath = (LaunchParameters.ContainsKey("-savedirectory") ? LaunchParameters["-savedirectory"] : Platform.Get<IPathService>().GetStoragePath("Terraria"));
++		SavePath = (LaunchParameters.ContainsKey("-savedirectory") ? LaunchParameters["-savedirectory"] : Platform.Get<IPathService>().GetStoragePath("TerrariaMattMod"));
+ #if SERVER
+ 		Main.dedServ = true;
+ #endif
