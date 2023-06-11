@@ -1,4 +1,4 @@
---- src/Terraria/Terraria/GameContent/ItemDropRules/Conditions.cs
+--- src/Refactor/Terraria/GameContent/ItemDropRules/Conditions.cs
 +++ src/MattTerrariaMod/Terraria/GameContent/ItemDropRules/Conditions.cs
 @@ -251,15 +_,15 @@
  

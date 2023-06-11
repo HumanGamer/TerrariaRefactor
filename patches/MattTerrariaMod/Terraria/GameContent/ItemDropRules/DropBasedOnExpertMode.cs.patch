@@ -1,4 +1,4 @@
---- src/Terraria/Terraria/GameContent/ItemDropRules/DropBasedOnExpertMode.cs
+--- src/Refactor/Terraria/GameContent/ItemDropRules/DropBasedOnExpertMode.cs
 +++ src/MattTerrariaMod/Terraria/GameContent/ItemDropRules/DropBasedOnExpertMode.cs
 @@ -4,24 +_,24 @@
  

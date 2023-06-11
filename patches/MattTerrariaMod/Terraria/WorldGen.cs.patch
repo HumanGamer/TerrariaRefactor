@@ -1,4 +1,4 @@
---- src/Terraria/Terraria/WorldGen.cs
+--- src/Refactor/Terraria/WorldGen.cs
 +++ src/MattTerrariaMod/Terraria/WorldGen.cs
 @@ -893,6 +_,7 @@
  	public static bool everythingWorldGen = false;

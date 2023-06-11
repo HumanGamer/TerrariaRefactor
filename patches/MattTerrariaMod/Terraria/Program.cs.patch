@@ -1,4 +1,4 @@
---- src/Terraria/Terraria/Program.cs
+--- src/Refactor/Terraria/Program.cs
 +++ src/MattTerrariaMod/Terraria/Program.cs
 @@ -157,7 +_,7 @@
  			TrySettingFNAToOpenGL(args);
