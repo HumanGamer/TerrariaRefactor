@@ -1,0 +1,251 @@
+--- src/Terraria/Terraria/Item.cs
++++ src/Refactor/Terraria/Item.cs
+@@ -2375,21 +_,6 @@
+ 	public void SetDefaults1(int type)
+ 	{
+ 		switch (type) {
+-			case 1:
+-				useStyle = 1;
+-				useTurn = true;
+-				useAnimation = 20;
+-				useTime = 13;
+-				autoReuse = true;
+-				width = 24;
+-				height = 28;
+-				damage = 5;
+-				pick = 40;
+-				UseSound = SoundID.Item1;
+-				knockBack = 2f;
+-				value = 2000;
+-				melee = true;
+-				break;
+ 			case 2:
+ 				useStyle = 1;
+ 				useTurn = true;
+@@ -33947,7 +_,20 @@
+ 
+ 		switch (type) {
+ 			case 3521:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 17;
+ 				pick = 55;
+@@ -34005,7 +_,20 @@
+ 				value = 7000;
+ 				return;
+ 			case 3515:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 11;
+ 				pick = 45;
+@@ -34063,7 +_,20 @@
+ 				value = 3500;
+ 				return;
+ 			case 3509:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 15;
+ 				pick = 35;
+@@ -34123,7 +_,20 @@
+ 				value = 350;
+ 				return;
+ 			case 3503:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 14;
+ 				pick = 35;
+@@ -34180,7 +_,20 @@
+ 				value = 525;
+ 				return;
+ 			case 3497:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 12;
+ 				pick = 43;
+@@ -34238,7 +_,20 @@
+ 				value = 2100;
+ 				return;
+ 			case 3491:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 19;
+ 				pick = 50;
+@@ -34296,7 +_,20 @@
+ 				value = 5250;
+ 				return;
+ 			case 3485:
+-				SetDefaults1(1);
++				useStyle = 1;
++				useTurn = true;
++				useAnimation = 20;
++				useTime = 13;
++				autoReuse = true;
++				width = 24;
++				height = 28;
++				damage = 5;
++				pick = 40;
++				UseSound = SoundID.Item1;
++				knockBack = 2f;
++				value = 2000;
++				melee = true;
++
+ 				this.type = type;
+ 				useTime = 15;
+ 				pick = 59;
+@@ -47110,27 +_,54 @@
+ 			variant = null;
+ 
+ 		Variant = variant;
+-		if (type == 0) {
++		if (type == 0)
++		{
+ 			netID = 0;
+ 			stack = 0;
+ 		}
+-		else if (ItemID.Sets.IsFood[type]) {
+-			SetFoodDefaults(type);
+-		}
+-		else if (type <= 1000) {
+-			SetDefaults1(type);
+-		}
+-		else if (type <= 2001) {
+-			SetDefaults2(type);
+-		}
+-		else if (type <= 3000) {
+-			SetDefaults3(type);
+-		}
+-		else if (type <= 3989) {
+-			SetDefaults4(type);
+-		}
+-		else {
+-			SetDefaults5(type);
++		else
++		{
++			ItemDef it = ItemDef.Get(type);
++			if (it != null)
++			{
++				this.useStyle = it.useStyle;
++				this.useTurn = it.useTurn;
++				this.useAnimation = it.useAnimation;
++				this.useTime = it.useTime;
++				this.autoReuse = it.autoReuse;
++				this.width = it.width;
++				this.height = it.height;
++				this.damage = it.damage;
++				this.pick = it.pick;
++				this.UseSound = it.UseSound;
++				this.knockBack = it.knockBack;
++				this.value = it.value;
++				this.melee = it.melee;
++			}
++			else if (ItemID.Sets.IsFood[type])
++			{
++				SetFoodDefaults(type);
++			}
++			else if (type <= 1000)
++			{
++				SetDefaults1(type);
++			}
++			else if (type <= 2001)
++			{
++				SetDefaults2(type);
++			}
++			else if (type <= 3000)
++			{
++				SetDefaults3(type);
++			}
++			else if (type <= 3989)
++			{
++				SetDefaults4(type);
++			}
++			else
++			{
++				SetDefaults5(type);
++			}
+ 		}
+ 
+ 		dye = (byte)GameShaders.Armor.GetShaderIdFromItemId(type);
