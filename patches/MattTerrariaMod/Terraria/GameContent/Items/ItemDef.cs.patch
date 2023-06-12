@@ -1,0 +1,19 @@
+--- src/Refactor/Terraria/GameContent/Items/ItemDef.cs
++++ src/MattTerrariaMod/Terraria/GameContent/Items/ItemDef.cs
+@@ -222,6 +_,8 @@
+ 
+ 		public static ItemIronPickaxe ironPickaxe;
+ 
++		public static ItemMovementCore movementCore;
++
+ 		public static void InitItems()
+ 		{
+ 			if (_initialized)
+@@ -230,6 +_,7 @@
+ 			_initialized = true;
+ 
+ 			ironPickaxe = new ItemIronPickaxe();
++			movementCore = new ItemMovementCore();
+ 		}
+ 	}
+ }

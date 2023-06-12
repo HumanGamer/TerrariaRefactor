@@ -1,0 +1,12 @@
+--- src/Refactor/Terraria/ID/ItemID.cs
++++ src/MattTerrariaMod/Terraria/ID/ItemID.cs
+@@ -6547,7 +_,8 @@
+ 	public const short DontHurtCrittersBookInactive = 5453;
+ 	public const short DontHurtNatureBookInactive = 5454;
+ 	public const short DontHurtComboBookInactive = 5455;
++	public const short MovementCore = 5456;
+-	public static readonly short Count = 5456;
++	public static readonly short Count = 5457;
+ 	public static readonly IdDictionary Search = IdDictionary.Create<ItemID, short>();
+ 
+ 	private static Dictionary<string, short> GenerateLegacyItemDictionary()
