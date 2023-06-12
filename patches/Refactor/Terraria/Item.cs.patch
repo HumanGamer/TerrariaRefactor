@@ -1515,7 +1515,7 @@
  				SetShopValues(ItemRarityColor.Green2, buyPrice(0, 10));
  				width = 30;
  				height = 30;
-@@ -47110,27 +_,54 @@
+@@ -47110,27 +_,127 @@
  			variant = null;
  
  		Variant = variant;
@@ -1547,19 +1547,92 @@
 +			ItemDef it = ItemDef.Get(type);
 +			if (it != null)
 +			{
++				this.flame = it.flame;
++				this.mech = it.mech;
++				this.tileWand = it.tileWand;
++				this.wornArmor = it.wornArmor;
++				this.dye = it.dye;
++				this.fishingPole = it.fishingPole;
++				this.bait = it.bait;
++				this.makeNPC = it.makeNPC;
++				this.expert = it.expert;
++				this.hairDye = it.hairDye;
++				this.paint = it.paint;
++				this.paintCoating = it.paintCoating;
++				this.holdStyle = it.holdStyle;
 +				this.useStyle = it.useStyle;
-+				this.useTurn = it.useTurn;
++				this.channel = it.channel;
++				this.accessory = it.accessory;
 +				this.useAnimation = it.useAnimation;
 +				this.useTime = it.useTime;
-+				this.autoReuse = it.autoReuse;
-+				this.width = it.width;
-+				this.height = it.height;
-+				this.damage = it.damage;
++				this.maxStack = it.maxStack;
 +				this.pick = it.pick;
-+				this.UseSound = it.UseSound;
++				this.axe = it.axe;
++				this.hammer = it.hammer;
++				this.tileBoost = it.tileBoost;
++				this.createTile = it.createTile;
++				this.createWall = it.createWall;
++				this.placeStyle = it.placeStyle;
++				this.damage = it.damage;
 +				this.knockBack = it.knockBack;
++				this.healLife = it.healLife;
++				this.healMana = it.healMana;
++				this.potion = it.potion;
++				this.consumable = it.consumable;
++				this.autoReuse = it.autoReuse;
++				this.useTurn = it.useTurn;
++				this.color = it.color;
++				this.alpha = it.alpha;
++				this.glowMask = it.glowMask;
++				this.scale = it.scale;
++				this.UseSound = it.UseSound;
++				this.defense = it.defense;
++				this.headSlot = it.headSlot;
++				this.bodySlot = it.bodySlot;
++				this.legSlot = it.legSlot;
++				this.handOnSlot = it.handOnSlot;
++				this.handOffSlot = it.handOffSlot;
++				this.backSlot = it.backSlot;
++				this.frontSlot = it.frontSlot;
++				this.shoeSlot = it.shoeSlot;
++				this.waistSlot = it.waistSlot;
++				this.wingSlot = it.wingSlot;
++				this.shieldSlot = it.shieldSlot;
++				this.neckSlot = it.neckSlot;
++				this.faceSlot = it.faceSlot;
++				this.balloonSlot = it.balloonSlot;
++				this.beardSlot = it.beardSlot;
++				this.stringColor = it.stringColor;
++				this.rare = it.rare;
++				this.shoot = it.shoot;
++				this.shootSpeed = it.shootSpeed;
++				this.ammo = it.ammo;
++				this.notAmmo = it.notAmmo;
++				this.useAmmo = it.useAmmo;
++				this.lifeRegen = it.lifeRegen;
++				this.manaIncrease = it.manaIncrease;
++				this.mana = it.mana;
++				this.noUseGraphic = it.noUseGraphic;
++				this.noMelee = it.noMelee;
 +				this.value = it.value;
++				this.vanity = it.vanity;
++				this.material = it.material;
++				this.noWet = it.noWet;
++				this.buffType = it.buffType;
++				this.buffTime = it.buffTime;
++				this.mountType = it.mountType;
++				this.cartTrack = it.cartTrack;
++				this.uniqueStack = it.uniqueStack;
++				this.shootsEveryUse = it.shootsEveryUse;
++				this.chlorophyteExtractinatorConsumable = it.chlorophyteExtractinatorConsumable;
++				this.DD2Summon = it.DD2Summon;
++				this.crit = it.crit;
 +				this.melee = it.melee;
++				this.magic = it.magic;
++				this.ranged = it.ranged;
++				this.summon = it.summon;
++				this.sentry = it.sentry;
++				this.reuseDelay = it.reuseDelay;
 +			}
 +			else if (ItemID.Sets.IsFood[type])
 +			{
