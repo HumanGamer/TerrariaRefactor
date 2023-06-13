@@ -15,7 +15,9 @@ namespace Terraria.GameContent.Items
 			height = 30;
 			accessory = true;
 			shoeSlot = 24;
-			rare = (int)ItemRarityColor.Lime7;
+			balloonSlot = 19;
+			wingSlot = 29;
+			rare = (int)ItemRarityColor.Purple11;
 			value = Item.sellPrice(0, 15);
 			hasVanityEffects = true;
 		}

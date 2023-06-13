@@ -21,6 +21,39 @@
  
  				return result;
  			}
+@@ -10969,7 +_,7 @@
+ 			jumpBoost = true;
+ 		}
+ 
+-		if (currentItem.type == 5331) {
++		if (currentItem.type == 5331 || currentItem.type == ItemID.MovementCore) {
+ 			hasJumpOption_Cloud = true;
+ 			hasJumpOption_Sandstorm = true;
+ 			hasJumpOption_Blizzard = true;
+@@ -11260,7 +_,7 @@
+ 		if (currentItem.type == 5044)
+ 			hasCreditsSceneMusicBox = true;
+ 
+-		if (currentItem.type == 908 || currentItem.type == 5000) {
++		if (currentItem.type == 908 || currentItem.type == 5000 || currentItem.type == ItemID.MovementCore) {
+ 			waterWalk = true;
+ 			fireWalk = true;
+ 			lavaMax += 420;
+@@ -11462,6 +_,14 @@
+ 			iceSkate = true;
+ 		}
+ 
++		if (currentItem.type == ItemID.MovementCore)
++		{
++			accRunSpeed = 12.0f;
++			rocketBoots = (vanityRocketBoots = 4);
++			moveSpeed += 0.58f;
++			iceSkate = true;
++		}
++
+ 		if (currentItem.type == 4874) {
+ 			accRunSpeed = 6f;
+ 			rocketBoots = (vanityRocketBoots = 5);
 @@ -14187,7 +_,7 @@
  
  	public void ResetEffects()
@@ -48,3 +81,12 @@
  			flag = false;
  
  		if (pulley && sItem.fishingPole > 0)
+@@ -42858,7 +_,7 @@
+ 		newPlayer.skinVariant = (int)MathHelper.Clamp(newPlayer.skinVariant, 0f, PlayerVariantID.Count - 1);
+ 		for (int i = 3; i < 10; i++) {
+ 			int type = newPlayer.armor[i].type;
+-			if (type == 908 || type == 5000)
++			if (type == 908 || type == 5000 || type == ItemID.MovementCore)
+ 				newPlayer.lavaMax += 420;
+ 
+ 			if (type == 906 || type == 4038 || type == 3999 || type == 4003)
