@@ -24,6 +24,11 @@
 			"PatchesDir": "Refactor",
 			"SrcDir": "Refactor"
 		},
+    "ModLoader": {
+      "Parent": "Refactor",
+			"PatchesDir": "ModLoader",
+			"SrcDir": "ModLoader"
+		},
     "Experiments": {
       "Parent": "Refactor",
       "PatchesDir": "Experiments",

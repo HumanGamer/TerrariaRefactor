@@ -1,0 +1,11 @@
+--- src/Refactor/Terraria/Program.cs
++++ src/ModLoader/Terraria/Program.cs
+@@ -31,7 +_,7 @@
+ 	public static string SavePath;
+ 	// TODO: Temporarily change save path for development
+ 	//public const string TerrariaSaveFolderPath = "Terraria";
+-	public const string TerrariaSaveFolderPath = "Terraria_Refactor";
++	public const string TerrariaSaveFolderPath = "Terraria_Refactor_ModLoader";
+ 	private static int ThingsToLoad;
+ 	private static int ThingsLoaded;
+ 	public static bool LoadedEverything;
