@@ -1,5 +1,5 @@
 --- src/Refactor/Terraria/GameContent/ItemDropRules/Conditions.cs
-+++ src/MattTerrariaMod/Terraria/GameContent/ItemDropRules/Conditions.cs
++++ src/Experiments/Terraria/GameContent/ItemDropRules/Conditions.cs
 @@ -251,15 +_,15 @@
  
  	public class NotExpert : IItemDropRuleCondition, IProvideItemConditionDescription

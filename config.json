@@ -24,10 +24,10 @@
 			"PatchesDir": "Refactor",
 			"SrcDir": "Refactor"
 		},
-    "MattTerrariaMod": {
+    "Experiments": {
       "Parent": "Refactor",
-      "PatchesDir": "MattTerrariaMod",
-      "SrcDir": "MattTerrariaMod"
+      "PatchesDir": "Experiments",
+      "SrcDir": "Experiments"
     }
 	}
 }

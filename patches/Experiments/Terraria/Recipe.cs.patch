@@ -1,5 +1,5 @@
 --- src/Refactor/Terraria/Recipe.cs
-+++ src/MattTerrariaMod/Terraria/Recipe.cs
++++ src/Experiments/Terraria/Recipe.cs
 @@ -14516,6 +_,11 @@
  		currentRecipe.requiredItem[0].SetDefaults(73);
  		currentRecipe.requiredItem[0].stack = 100;

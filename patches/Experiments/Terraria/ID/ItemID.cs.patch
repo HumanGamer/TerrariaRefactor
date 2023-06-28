@@ -1,5 +1,5 @@
 --- src/Refactor/Terraria/ID/ItemID.cs
-+++ src/MattTerrariaMod/Terraria/ID/ItemID.cs
++++ src/Experiments/Terraria/ID/ItemID.cs
 @@ -6547,7 +_,8 @@
  	public const short DontHurtCrittersBookInactive = 5453;
  	public const short DontHurtNatureBookInactive = 5454;

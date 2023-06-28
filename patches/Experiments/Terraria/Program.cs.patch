@@ -1,12 +1,12 @@
 --- src/Refactor/Terraria/Program.cs
-+++ src/MattTerrariaMod/Terraria/Program.cs
++++ src/Experiments/Terraria/Program.cs
 @@ -29,9 +_,7 @@
  	// public const bool IsDebug = false;
  	public static Dictionary<string, string> LaunchParameters = new Dictionary<string, string>();
  	public static string SavePath;
 -	// TODO: Temporarily change save path for development
 -	//public const string TerrariaSaveFolderPath = "Terraria";
-+	public const string TerrariaSaveFolderPath = "TerrariaMattMod";
++	public const string TerrariaSaveFolderPath = "TerrariaExperiments";
 -	public const string TerrariaSaveFolderPath = "Terraria_Refactor";
  	private static int ThingsToLoad;
  	private static int ThingsLoaded;

@@ -1,5 +1,5 @@
 --- src/Refactor/Terraria/GameContent/UI/States/UIWorldCreation.cs
-+++ src/MattTerrariaMod/Terraria/GameContent/UI/States/UIWorldCreation.cs
++++ src/Experiments/Terraria/GameContent/UI/States/UIWorldCreation.cs
 @@ -35,7 +_,8 @@
  	{
  		Random,

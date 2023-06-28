@@ -1,5 +1,5 @@
 --- src/Refactor/Terraria/Localization/Content/en-US/Items.json
-+++ src/MattTerrariaMod/Terraria/Localization/Content/en-US/Items.json
++++ src/Experiments/Terraria/Localization/Content/en-US/Items.json
 @@ -175,7 +_,7 @@
  		"Small": "Small"
  	},

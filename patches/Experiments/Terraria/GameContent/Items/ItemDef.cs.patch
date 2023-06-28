@@ -1,5 +1,5 @@
 --- src/Refactor/Terraria/GameContent/Items/ItemDef.cs
-+++ src/MattTerrariaMod/Terraria/GameContent/Items/ItemDef.cs
++++ src/Experiments/Terraria/GameContent/Items/ItemDef.cs
 @@ -222,6 +_,8 @@
  
  		public static ItemIronPickaxe ironPickaxe;
